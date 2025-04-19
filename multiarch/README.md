@@ -36,3 +36,6 @@ docker buildx build \
 
 You’ll need to run this command **for each service**.
 
+below is the tar google drive link for your convenience
+
+https://drive.google.com/drive/folders/1IBTa5DnwCqwX6taoNZYNPOcholxo5QrG?usp=sharing
