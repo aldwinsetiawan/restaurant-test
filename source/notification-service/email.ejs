@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div>
+      <h2>Order Confirmation</h2>
+      <p>Hi <%= name %>,</p>
+      <p>Your order has been processed. Here are your order details:</p>
+  
+      <table>
+        <thead>
+          <tr>
+            <th>Food Item</th>
+            <th>Quantity</th>
+            <th>Price (each)</th>
+            <th>Subtotal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% foods.forEach(food => { %>
+            <tr>
+              <td><%= food.name %></td>
+              <td><%= food.qty %></td>
+              <td>$<%= food.price %></td>
+              <td>$<%= food.price * food.qty %></td>
+            </tr>
+          <% }); %>
+          <tr>
+            <td colspan="3">Total Price</td>
+            <td>$<%= total_price %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

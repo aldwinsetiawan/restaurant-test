@@ -1,0 +1,15 @@
+services:
+  app:
+    image: notification-service:multiarch
+    platform: linux/arm64
+    # platform: linux/amd64
+    ports:
+      - "3002:3000"
+    env_file:
+      - .env
+    networks:
+      - restaurant-net
+
+networks:
+  restaurant-net:
+    external: true

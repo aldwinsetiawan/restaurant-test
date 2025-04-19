@@ -1,0 +1,70 @@
+services:
+  mongo1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mongo1
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo1-data:/data/db
+      - ./01initial-config.js:/docker-entrypoint-initdb.d/01initial-config.js:ro
+      # - ./02init-replica.js:/docker-entrypoint-initdb.d/02init-replica.js:ro
+      # - ./03seed.js:/docker-entrypoint-initdb.d/03seed.js:ro
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: 1234
+      MONGO_INITDB_DATABASE: test-db
+    healthcheck:
+      test: ["CMD", "mongo", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+    networks:
+      - restaurant-net
+
+  mongo2:
+    image: mongo:8.0.8
+    container_name: mongo2
+    volumes:
+      - mongo2-data:/data/db
+      - ./mongo-keyfile:/etc/mongo-keyfile
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: 1234
+    command: >
+      bash -c "
+        chmod 600 /etc/mongo-keyfile && chown mongodb:mongodb /etc/mongo-keyfile &&
+        exec docker-entrypoint.sh --replSet rs0 --auth --keyFile /etc/mongo-keyfile
+      "
+    restart: unless-stopped
+    networks:
+      - restaurant-net
+
+  mongo3:
+    image: mongo:8.0.8
+    container_name: mongo3
+    volumes:
+      - mongo3-data:/data/db
+      - ./mongo-keyfile:/etc/mongo-keyfile
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: 1234
+    command: >
+      bash -c "
+        chmod 600 /etc/mongo-keyfile && chown mongodb:mongodb /etc/mongo-keyfile && 
+        exec docker-entrypoint.sh --replSet rs0 --auth --keyFile /etc/mongo-keyfile
+      "
+    restart: unless-stopped
+    networks:
+      - restaurant-net
+
+volumes:
+  mongo1-data:
+  mongo2-data:
+  mongo3-data:
+
+networks:
+  restaurant-net:
+    external: true

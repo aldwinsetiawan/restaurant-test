@@ -1,0 +1,100 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "restaurant-test",
+    "collectionId": "7dfc5791-f19c-4d84-af05-de23d83efcf2",
+    "dateExported": "2025-04-19T14:28:25.564Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "f1e17570-7bdd-41dd-93a6-4fd37129a14c",
+            "colId": "7dfc5791-f19c-4d84-af05-de23d83efcf2",
+            "containerId": "",
+            "name": "localhost:3000/place-order",
+            "url": "localhost:3000/place-order",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2025-04-19T14:27:06.131Z",
+            "modified": "2025-04-19T14:27:06.131Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"orderData\": [\n      {\n        \"id\": \"68020fed0e339171d8d861e0\",\n        \"name\": \"Milk\",\n        \"price\": 5,\n        \"qty\": 2\n      },\n      {\n        \"id\": \"68020fed0e339171d8d861e1\",\n        \"name\": \"Fried Rice\",\n        \"price\": 10,\n        \"qty\": 2\n      }\n    ]\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vbW9pIiwic3ViIjoiNjgwMjBmZWQwZTMzOTE3MWQ4ZDg2MWU2IiwiaWF0IjoxNzQ1MDY3MzEzLCJleHAiOjE3NDUwNzA5MTN9.tyS4hyFzwPkwsrclC-TuVZG70nNCu6nIxMWUAzJR9oQ"
+            }
+        },
+        {
+            "_id": "680b51d8-8760-4588-81ad-d16e1f3ee07a",
+            "colId": "7dfc5791-f19c-4d84-af05-de23d83efcf2",
+            "containerId": "",
+            "name": "localhost:3000/track-order",
+            "url": "localhost:3000/track-order?orderId=68039c89d02a67fb1d27029d",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2025-04-19T14:27:18.962Z",
+            "modified": "2025-04-19T14:27:18.962Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "orderId",
+                    "value": "68039c89d02a67fb1d27029d",
+                    "isPath": false
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vbW9pIiwic3ViIjoiNjgwMjBmZWQwZTMzOTE3MWQ4ZDg2MWU2IiwiaWF0IjoxNzQ1MDU1MzY1LCJleHAiOjE3NDUwNTg5NjV9.XAdan9Z0yDMuxq8ZyUoUErXl6Kb8IAVdmwPT44nZBgU"
+            }
+        },
+        {
+            "_id": "16f33da7-ad97-4799-9599-6681ef1bb800",
+            "colId": "7dfc5791-f19c-4d84-af05-de23d83efcf2",
+            "containerId": "",
+            "name": "localhost:3000/profile",
+            "url": "localhost:3000/profile",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2025-04-19T14:27:24.542Z",
+            "modified": "2025-04-19T14:27:24.542Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vbW9pIiwic3ViIjoiNjgwMjBmZWQwZTMzOTE3MWQ4ZDg2MWU2IiwiaWF0IjoxNzQ1MDU1MzEyLCJleHAiOjE3NDUwNTg5MTJ9.GeY6xnxpRZfcrTHAzo0oxqEfgexoFi3NvhYHiMzxsrI"
+            }
+        },
+        {
+            "_id": "52d7e4b3-a23f-4a56-b0e6-676f6e7a5d4c",
+            "colId": "7dfc5791-f19c-4d84-af05-de23d83efcf2",
+            "containerId": "",
+            "name": "localhost:3000/login",
+            "url": "localhost:3000/login",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2025-04-19T14:27:28.536Z",
+            "modified": "2025-04-19T14:27:28.536Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"username\": \"momoi\",\n  \"pass\": \"hytam\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "b3588d24-6ea1-4adb-8ad7-e5c505d00be8",
+            "colId": "7dfc5791-f19c-4d84-af05-de23d83efcf2",
+            "containerId": "",
+            "name": "localhost:3000/foods",
+            "url": "localhost:3000/foods",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2025-04-19T14:27:32.953Z",
+            "modified": "2025-04-19T14:27:32.953Z",
+            "headers": []
+        }
+    ],
+    "ref": "t174_qjfeWs6Nnt3tmQyhaf7FSdBrVWp3XDUDlBwHqWQHXZ3lnshqbwY3UFflm1l3wQWyB_mPlIxwlDegpDvXA"
+}
